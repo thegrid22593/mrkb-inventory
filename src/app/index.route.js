@@ -92,7 +92,7 @@
                 }
             });
 
-        $urlRouterProvider.otherwise('/bldg/landing');
+        $urlRouterProvider.otherwise('/mrkb-inventory/bldg/landing');
     }
 
 })();
