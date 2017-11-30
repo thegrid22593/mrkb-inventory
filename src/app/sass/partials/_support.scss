@@ -1,0 +1,31 @@
+.mobile-support {
+    display: none;
+    background: white;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 1001;
+    text-align: center;
+
+    &.enabled {
+        display: block;
+    }
+
+    .mobile-support-wrapper {
+        @include center-align;
+
+        .icon-mkrb-logo {
+            font-size: 10rem;
+            color: $urchin;
+            padding: 0;
+            margin: 0;
+        }
+
+        p {
+            font-size: 2rem;
+            color: $urchin;
+            margin: 0;
+            padding: 0;
+        }
+    }
+}

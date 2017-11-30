@@ -1,0 +1,28 @@
+<div class="building-detail-preview">
+    <button class="btn view-gallery" ng-click="buildingDetail.viewGallery(buildingDetail.model.name, buildingDetail.model.floorPlanImage, buildingDetail.model.image)">View Gallery</button>
+    <img ng-if="buildingDetail.model.imageThumb" ng-src="{{buildingDetail.model.imageThumb}}" alt="">
+    <div class="building-detail-preview-dimmer"></div>
+</div>
+
+<div class="building-detail-info">
+    <p>
+        {{buildingDetail.model.id}} | {{buildingDetail.model.name}}
+    </p>
+
+    <span class="building-detail-info-label {{buildingDetail.model.availability}}">{{buildingDetail.model.availability}}</span>
+
+    <ul class="building-detail-info-list">
+        <li>{{buildingDetail.model.bedrooms}}</li>
+        <li ng-if="buildingDetail.model.den">{{buildingDetail.model.den}}</li>
+        <li>{{buildingDetail.model.bathrooms}}</li>
+        <li>{{buildingDetail.model.totalSQFT}} SF Total</li>
+        <li>{{buildingDetail.model.intSQFT}} SF Inner</li>
+        <li>{{buildingDetail.model.lanaiSQFT}} SF Lanai</li>
+    </ul>
+</div>
+
+<div class="building-detail-carousel">
+    <img ng-src="{{buildingDetail.model.floorplanImage}}"
+         ng-click="buildingDetail.viewGallery(buildingDetail.model.name, buildingDetail.model.floorplanImage)"
+         alt="{{buildingDetail.model.name}} {{buildingDetail.model.bedrooms}} floorplan">
+</div>

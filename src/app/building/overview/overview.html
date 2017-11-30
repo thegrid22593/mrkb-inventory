@@ -1,0 +1,41 @@
+<header class="building-panel-header">
+    <h4>Select Floorplan</h4>
+</header>
+
+<!-- Floor Plan Options Filter-->
+<ul class="building-panel-floorplans">
+    <li ng-repeat="floorPlan in buildingOverview.floorPlanItems">
+        <a ng-href="#"
+           ng-click="buildingOverview.filterByFloorPlan(floorPlan.name); buildingOverview.setActive(floorPlan)"
+           ng-class="{ 'active' : buildingOverview.floorPlanItemsActive === floorPlan, default: buildingOverview.overviewModel.filterFloorplanItemDefault == true }">
+            <i class="icon {{floorPlan.icon}}"></i>
+            <span>{{floorPlan.name}}</span>
+            <p>{{floorPlan.bedroom}}</p>
+        </a>
+    </li>
+</ul>
+
+
+<!-- Units -->
+<h4>Select Residences</h4>
+<ul class="building-panel-units">
+    <li ng-repeat="building in building.buildingModel.allBuildings | filterMultipleKeyValues: {buildingID: building.buildingModel.currentBldgID, name:building.buildingModel.currentBldgNames, availability:building.buildingModel.FloorPlanTypeAvailability}">
+        <a href="#"
+           class="{{building.availability}} "
+           ng-class="{'active': buildingOverview.residenceItemsActive === building.id }"
+           ng-click="buildingOverview.viewDetail(building.id, building.name); buildingOverview.setActiveResidence(building.id);">
+            <i class="icon icon-{{building.name}}-coaster"></i>
+            <span class="building-panel-unit-number">{{building.id}}</span>
+        </a>
+    </li>
+</ul>
+
+
+<!-- Unit Availability Filter-->
+<div class="building-panel-options">
+    <button ng-repeat="availabiltyOption in buildingOverview.AvailabiltyOptions"
+            ng-click="buildingOverview.filterByAvailability(availabiltyOption.availability)"
+            ng-dblclick="buildingOverview.resetFilters()"
+            class="btn {{availabiltyOption.availability}}">{{availabiltyOption.availability}}
+    </button>
+</div>

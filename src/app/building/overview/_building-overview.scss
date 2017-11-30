@@ -1,0 +1,207 @@
+.building-overview {
+    background: $off-white;
+    height: 100vh;
+    max-width: $building-overview-width;
+    min-width: $building-overview-width - 100;
+    position: absolute;
+    right: -$building-overview-width;
+    top:0;
+    width: $building-overview-width;
+    z-index: $zindex-priority;
+    @include mrkb-transition(.4s right ease-in-out);
+
+    &.expanded {
+        right:0;
+    }
+
+    .building-panel-header {
+        font-size: 1.25rem;
+        letter-spacing: 2px;
+        padding: 120px 0 0;
+        text-transform: uppercase;
+
+        h4 {
+            margin: 0;
+        }
+    }
+
+    h4 {
+        color: #666;
+        font-size: 1.25rem;
+        letter-spacing: 2px;
+        margin: 60px 0 0 0;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .building-panel-floorplans {
+        margin: 0;
+        padding: $navbar-height 0 0 0;
+        text-align: center;
+
+        li {
+            display: inline-block;
+
+            a {
+                border: none;
+                color: $urchin;
+                cursor: pointer;
+                display: block;
+                opacity: 0.6;
+                padding: 0 1.6rem;
+                text-decoration: none;
+                @include transition(0.1s opacity ease-in-out);
+
+                &.default,
+                &:hover,
+                &.active {
+                    opacity: 1;
+                }
+            }
+
+            .icon {
+                color: $urchin;
+                font-size: 4rem;
+                line-height: 0;
+            }
+
+            span {
+                display: block;
+                font-size: 1.2rem;
+                font-weight: bold;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+            }
+
+            p {
+                margin: 0;
+            }
+        }
+    }
+
+    .building-panel-units {
+        list-style: none;
+        overflow: auto;
+        padding: 10px 20px;
+        text-align: left;
+
+
+        @media screen and (max-height: 768px){
+            height: 252px;
+            overflow: auto;
+        }
+
+
+        @include mq-md {
+            padding: 10px 38px;
+        }
+
+        li {
+            display: inline-block;
+            margin: 5px;
+
+            a {
+                background: white;
+                color: white;
+                display: inline-block;
+                height: 100%;
+                padding: .9rem 1.4rem .4rem;
+                text-align: center;
+                text-decoration: none;
+                width: 100%;
+
+                i {
+                    color: white;
+                    display: block;
+                    font-size: 3.4rem;
+                    line-height: 3.4rem;
+                }
+
+                &:hover,
+                &.active {
+                    color: $urchin;
+
+                    i {
+                        color: $urchin;
+                    }
+                }
+
+                span {
+                    display: block;
+                }
+
+                &.sold { background: $sold-color; }
+
+                &.available { background: $available-color; }
+
+                &.pending { background: $pending-color; }
+            }
+        }
+    }
+
+
+    .building-panel-options {
+        bottom: 40px;
+        margin: 0 auto;
+        position: absolute;
+        text-align: center;
+        width: 100%;
+
+        .btn {
+            border: none;
+            display: block;
+            font-size: 1.1rem;
+            font-weight:900;
+            letter-spacing: 2px;
+            margin: 4px auto;
+            padding: 10px 30px;
+            text-transform: uppercase;
+            width: 90%;
+            @include transition(0.1s color ease-in-out);
+
+            @include mq-md {
+                display: inline-block;
+                margin: 0 4px;
+                width: auto;
+            }
+
+            &.sold,
+            &.available,
+            &.pending {
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            &.sold {
+                background: $grey;
+                color: white;
+                &:hover {
+                    color: $urchin-04;
+                }
+            }
+
+            &.available {
+                background: $available-color;
+                color: white;
+
+                &:hover {
+                    color: $urchin-04;
+                }
+            }
+
+            &.pending {
+                background: lighten($available-color, 10%);
+                color: white;
+
+                &:hover {
+                    color: $urchin-04;
+                }
+            }
+        }
+    }
+}
+
+main.ng-enter {
+    @include transition(0.25s);
+}

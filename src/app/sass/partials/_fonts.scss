@@ -1,0 +1,15 @@
+$mrkb-fonts: brandongrotesque;
+$font-path: '/assets/fonts';
+
+// Font-face loader
+@each $font-face in $mrkb-fonts {
+    @font-face {
+        font-family: #{$font-face};
+        src: url('#{$font-path}/#{$font-face}.eot');
+        src: url('#{$font-path}/#{$font-face}.eot?') format('eot'),
+        url('#{$font-path}/#{$font-face}.woff') format('woff'),
+        url('#{$font-path}/#{$font-face}.woff2') format('woff2'),
+        url('#{$font-path}/#{$font-face}.ttf')  format('truetype'),
+        url('#{$font-path}/#{$font-face}.svg##{$font-face}')  format('svg');
+    }
+}

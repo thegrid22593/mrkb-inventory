@@ -1,0 +1,29 @@
+<div class="mapped-item-1"
+     ng-class="{'active': buildingMap.mapModel.currentBldgID == 1}"
+     ng-click="buildingMap.navigateToBuildingState(1)">
+    <span class="building-text">Building</span><br />
+    <span class="building-number">1</span>
+    <div class="map-arrow"></div>
+</div>
+
+<div class="mapped-item-5"
+     ng-class="{'active': buildingMap.mapModel.currentBldgID == 5}"
+     ng-click="buildingMap.navigateToBuildingState(5)">
+    <span class="building-text">Building</span><br />
+    <span class="building-number">5</span>
+    <div class="map-arrow"></div>
+</div>
+
+<div class="mapped-item-2"
+     ng-class="{'active': buildingMap.mapModel.currentBldgID == 2}"
+     ng-click="buildingMap.navigateToBuildingState(2)">
+    <span class="building-text">Building</span><br />
+    <span class="building-number">2</span>
+    <div class="map-arrow"></div>
+</div>
+
+<div class="overlay">
+
+</div>
+
+<div class="map-hit-area" ng-click="buildingMap.navigateToLanding($event)"></div>

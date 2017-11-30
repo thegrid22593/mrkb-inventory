@@ -1,0 +1,78 @@
+.navbar {
+    background: $urchin-04;
+    height: 72px;
+
+    ul {
+        font-family: 'brandongrotesque';
+
+        li {
+            font-size: 1.2rem;
+            padding: 0 1.5em;
+            line-height: 6em;
+
+            a {
+                position: relative;
+                text-transform: uppercase;
+                letter-spacing: 0.175em;
+                text-decoration: none;
+                color: $urchin-06;
+                height: 100%;
+                display: block;
+                padding: 2.7rem 0 0 0;
+
+                &:hover, &:focus {
+                    background: transparent;
+                    color: white;
+                }
+
+                &.active {
+                    color: white;
+                    background: transparent;
+                }
+            }
+        }
+    }
+}
+
+.navbar-brand {
+    background: $urchin-02;
+    height: 72px;
+    @include transition(0.2s  all ease-in-out);
+
+    &:hover {
+        cursor: pointer;
+        background: $urchin-05;
+    }
+
+    .mkrb-logo-mark {
+        font-size: 6.6rem;
+        color: white;
+        position: relative;
+        top: 10px;
+        left: 10px;
+        display: block;
+    }
+}
+
+.navbar-toggle {
+    background: $urchin-03;
+    margin-top: 1.7rem;
+
+    .icon-bar {
+        border: 1px solid $urchin-06;
+    }
+
+}
+
+.collapse.in {
+    background: $urchin-04;
+}
+
+.navbar-collapse {
+    border-top: none;
+    padding-bottom: 2rem;
+}
+
+.navbar > .container-fluid .navbar-brand {
+    padding: 2rem;
+}

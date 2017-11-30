@@ -1,0 +1,205 @@
+.building-map {
+    background: url('../../../assets/images/buildings/building-map-lrg.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: absolute;
+    top:0;
+    width: 100%;
+    z-index: $zindex-tertiary;
+    left: 0;
+    @include transition(.45s left ease-in-out);
+
+
+    &.expanded {
+        left: -20vw;
+    }
+
+    @include mq-xxxlg {
+        position: relative;
+        max-width: $screen-xxlg;
+        margin: 0 auto;
+    }
+
+    .map-hit-area {
+        background: transparent;
+        position: absolute;
+        z-index: 100;
+        width: 100%;
+        height: 100%;
+        z-index: $zindex-tertiary;
+    }
+
+    $mapItems: 1, 2, 5;
+    @each $mapItem in $mapItems {
+        .mapped-item-#{$mapItem} {
+            position: absolute;
+            z-index: 20;
+            background: none;
+            padding: 2rem 3.5rem;
+            color: white;
+            border: 2px solid white;
+            text-align: center;
+            max-height: 130px;
+
+            &:hover {
+                background: lighten($urchin-04, 6%);
+                cursor: pointer;
+                border: 2px solid lighten($urchin-04, 6%);
+
+                .map-arrow {
+                    border-left: 13px solid transparent;
+                    border-right: 13px solid transparent;
+                    border-top: 15px solid lighten($urchin-04, 6%);
+                }
+            }
+
+            &.active {
+                background: $urchin-04;
+                border: 2px solid $urchin-04;
+                .map-arrow {
+                    border-left: 13px solid transparent;
+                    border-right: 13px solid transparent;
+                    border-top: 15px solid $urchin-04;
+                }
+            }
+
+            .map-arrow {
+                width: 0;
+                height: 0;
+                position: relative;
+                bottom: -1.5rem;
+                left: 3rem;
+                border-left: 13px solid transparent;
+                border-right: 13px solid transparent;
+                border-top: 15px solid white;
+            }
+
+            span {
+                position: relative;
+                bottom: 70%;
+                left: 0%;
+                -webkit-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+
+            .building-text {
+                text-transform: uppercase;
+                font-weight: 900;
+                letter-spacing: 0.2rem;
+                font-size: 1.5rem;
+            }
+
+            .building-number {
+                font-size: 5rem;
+            }
+        }
+    }
+
+    .mapped-item-1 {
+        bottom: 24%;
+        left: 5%;
+        transform: scale(.5);
+
+        @include mq-xs {
+            left: 15%;
+        }
+
+        @include mq-sm {
+            left: 20%;
+            transform: scale(.75);
+        }
+
+        @include mq-md {
+            transform: scale(1);
+            left: 34%;
+        }
+
+        @include mq-lg {
+            left: 38%;
+        }
+
+        @include mq-xlg {
+            left: 37%;
+            bottom: 28%;
+        }
+
+        @include mq-xxlg {
+            left: 38%;
+            bottom: 22%;
+        }
+    }
+
+    .mapped-item-2 {
+        top: 8%;
+        right: 30%;
+        transform: scale(.5);
+
+        @include mq-xs {
+            right: 38%;
+        }
+
+        @include mq-sm {
+            right: 40%;
+            transform: scale(.75);
+        }
+
+        @include mq-md {
+            right: 44%;
+            top: 10%;
+            transform: scale(1);
+        }
+
+        @include mq-lg {
+            right: 48%;
+            top: 8%;
+        }
+    }
+
+    .mapped-item-5 {
+        top: 68%;
+        right: 15%;
+        transform: scale(.5);
+
+        @include mq-xs {
+            right: 20%;
+        }
+
+        @include mq-sm {
+            right: 25%;
+            top: 70%;
+            transform: scale(.75);
+        }
+
+        @include mq-md {
+            transform: scale(1);
+            right: 36%;
+            top: 65%;
+        }
+
+        @include mq-lg {
+            right: 40%;
+            top: 70%;
+        }
+
+        @include mq-xlg {
+            right: 40%;
+            top: 69%;
+        }
+
+        @include mq-xxlg {
+            right: 40%;
+            top: 76%;
+        }
+    }
+
+    .overlay {
+        background: rgba(black, 0.4);
+        z-index: $zindex-tertiary;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+    }
+}

@@ -1,0 +1,49 @@
+// color palette
+$deep:              #00334E;
+$urchin:            #4E4058;
+
+// TODO fix colors
+$urchin-02:         darken($urchin, 4.5%);
+$urchin-03:         darken($urchin, 5%);
+$urchin-04:         darken($urchin, 11%);
+$urchin-05:         darken($urchin, 15%);
+$urchin-06:         lighten($urchin, 40%);
+$pacific:           #00818C;
+$seaglass:          #72B9B9;
+$sky:               #A8D4ED;
+$off-white:         #f9f8f7;
+$sand:              #A99A6F;
+$citrus:            #EFDD20;
+$bronze:            #C4960D;
+$sold-color:        #CCC;
+$pending-color:     #D1C6Af;
+$available-color:   #A99A6F;
+$grey:              #B2B1B1;
+$grey-2:            #333333;
+
+
+// stacking priority
+$zindex-priority:   5;
+$zindex-secondary:  4;
+$zindex-tertiary:   3;
+
+// mrkb navbar
+$navbar-height: 50px;
+
+// Responsive Breakpoints
+$screen-xxs: 320px;
+$screen-xs: 480px;
+$screen-sm: 640px;
+$screen-md: 1024px;
+$screen-lg: 1280px;
+$screen-xlg: 1600px;
+$screen-xxlg: 1920px;
+$screen-xxxlg: 2550px;
+
+// Overview pane
+$building-overview-width:   510px;
+$building-detail-width:     330px;
+
+// Bootstrap
+$font-family-sans-serif:  'brandongrotesque', Helvetica Neue, Helvetica, Arial, sans-serif;
+$text-color: $grey-2;

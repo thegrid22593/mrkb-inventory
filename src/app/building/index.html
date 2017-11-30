@@ -1,0 +1,21 @@
+<!-- Building Overview UI View -->
+<aside ui-view
+       name="building-overview"
+       ng-class="{'expanded': building.buildingModel.expanded}"
+       class="building-overview">
+</aside>
+
+
+<!-- Building Detail UI View -->
+<section ui-view
+         name="building-detail"
+         ng-class="{'expanded': building.buildingModel.detailExpanded}"
+         class="building-detail">
+</section>
+
+
+<!-- Building Map UI View -->
+<section ui-view="building-map"
+         ng-class="{'expanded': building.buildingModel.shiftMap}"
+         class="building-map">
+</section>

@@ -1,0 +1,24 @@
+<button class="btn close icon icon-close" ng-click="galleryModal.cancel()">&nbsp</button>
+
+<section class="modal-body">
+    <slick settings="galleryModal.slickConfig"
+           prev-arrow=".slick-prev"
+           next-arrow=".slick-next"
+           infinite=true
+           slides-to-show=1
+           slides-to-scroll=1
+           mobile-first="true">
+
+        <img ng-if="galleryModal.properties.viewImage != galleryModal.fpoImage"
+             ng-src="{{galleryModal.properties.viewImage}}"
+             class="property-img"
+             alt="">
+
+        <img ng-repeat="item in galleryModal.currentGallery.images"
+             ng-src="{{galleryModal.currentGallery.images[$index]}}"
+             alt="">
+    </slick>
+
+    <button type="button" class="slick-prev icon icon-prev"></button>
+    <button type="button" class="slick-next icon icon-next"></button>
+</section>

@@ -1,0 +1,111 @@
+.building-detail {
+    background: #efefef;
+    height: 100vh;
+    position: absolute;
+    right: -($building-overview-width + $building-detail-width) ;
+    top:0;
+    width: $building-detail-width;
+    z-index: $zindex-secondary;
+    @include transition(.75s right ease-in-out);
+
+    &.expanded {
+        right: $building-overview-width;
+    }
+
+    .building-detail-preview {
+
+        // margin-top: 20px;
+        // padding-top: $navbar-height;
+        position: relative;
+
+        @-moz-document url-prefix() {
+            padding-top: 0px;
+            margin-top: 0px;
+        }
+
+        img {
+            cursor: pointer;
+            display: block;
+            width: 100%;
+        }
+
+        .building-detail-preview-dimmer {
+
+            background: rgba(60,60,60,.5);
+            height:100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: $zindex-secondary;
+        }
+
+        .view-gallery {
+            background: rgba($urchin, 0.8);
+            @include center-align;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            margin-top: 20px;
+            outline: none;
+            padding: 1.5rem 3rem;
+            position: absolute;
+            text-transform: uppercase;
+            @include transition(.4s background ease-in-out);
+            width: 65%;
+            z-index: $zindex-priority;
+
+            &:hover {
+                background: rgba($urchin, .95);
+            }
+        }
+    }
+
+    .building-detail-carousel {
+        bottom: 2.5em;
+        position: absolute;
+        img {
+            cursor: pointer;
+            display: block;
+            width: 100%;
+        }
+    }
+
+    .building-detail-info {
+        padding: 0 2rem;
+
+        p {
+            font-size: 2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .building-detail-info-label {
+            background: $grey;
+            display: block;
+            letter-spacing: 2px;
+            padding: 1rem 1rem .8rem 1rem;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 1.4rem;
+
+            &.available { background: $available-color; }
+            &.sold { background: $sold-color; }
+            &.pending { background: $pending-color; }
+        }
+
+        .building-detail-info-list {
+            margin: 2rem 0;
+            padding: 0;
+            text-align: left;
+
+            li {
+                border-top: 1px solid $grey;
+                display: block;
+                list-style: none;
+                padding: 1.5rem 0;
+            }
+        }
+    }
+}
